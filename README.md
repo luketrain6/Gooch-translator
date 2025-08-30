@@ -1,2 +1,65 @@
 # Gooch-translator
 It’s a W translator
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gooch Translator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: monospace, sans-serif;
+      background-color: #111;
+      color: #0f0;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      margin-bottom: 10px;
+    }
+    textarea {
+      width: 90%;
+      height: 100px;
+      font-size: 16px;
+      margin: 10px 0;
+      padding: 10px;
+      background: #222;
+      color: #0f0;
+      border: 2px solid #0f0;
+      border-radius: 5px;
+    }
+    button {
+      font-size: 18px;
+      padding: 10px 20px;
+      background-color: #0f0;
+      color: #111;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0c0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🌀 Gooch Translator 🌀</h1>
+  <p>Type English below → Get Gooch!</p>
+
+  <textarea id="englishInput" placeholder="Type English here..."></textarea><br>
+  <button onclick="translateGooch()">Translate!</button><br>
+  <textarea id="goochOutput" placeholder="Gooch will appear here..." readonly></textarea>
+
+  <script>
+    function translateGooch() {
+      let text = document.getElementById("englishInput").value;
+      let goochtxt = text.replace(/D/g, "CH").replace(/d/g, "ch")
+                         .replace(/H/g, "SN").replace(/h/g, "sn");
+      document.getElementById("goochOutput").value = goochtxt;
+    }
+  </script>
+
+</body>
+</html>
